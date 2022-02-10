@@ -35,13 +35,19 @@ class Blockchain {
 
     // Skip Genesis block
     for (let i = 1; i < chain.length; i++) {
-      const { timestamp, lastHash, hash, data } = chain[i];
+      const { timestamp, lastHash, hash, data, nonce, difficulty } = chain[i];
       const actualLastHash = chain[i - 1].hash;
 
       // The `lastHash` property should match the previous block `hash`
       if (lastHash !== actualLastHash) return false;
 
-      const validatedHash = cryptoHash(timestamp, lastHash, data);
+      const validatedHash = cryptoHash(
+        timestamp,
+        lastHash,
+        data,
+        nonce,
+        difficulty
+      );
       // The Block `hash` should be valid
       if (hash !== validatedHash) return false;
     }
