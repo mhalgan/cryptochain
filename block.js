@@ -25,7 +25,7 @@ class Block {
     let nonce = 0;
 
     // Generates new hashes by incrementing the nonce until the
-    // first (difficulty) characters of the hash are 0s
+    // leading (difficulty) characters of the hash are 0s
     // Ex: difficulty 3 -> hash 000100110110... is valid
     // Also dinamically adjusts the difficulty based on the time needed
     // to mine the block and the MINE_RATE
