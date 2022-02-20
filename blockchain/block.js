@@ -1,6 +1,6 @@
 const hexToBinary = require("hex-to-binary");
-const cryptoHash = require("./crypto-hash");
-const { GENESIS_DATA, MINE_RATE } = require("./config");
+const cryptoHash = require("../util/crypto-hash");
+const { GENESIS_DATA, MINE_RATE } = require("../config");
 
 class Block {
   constructor({ timestamp, lastHash, hash, data, nonce, difficulty }) {
@@ -56,7 +56,7 @@ class Block {
   }
 
   // Dinamically adjusts the difficulty to mine the next block
-  // based on the time needed to mine the last one and the MINE_RATE
+  // based on the time needed to mine the last one and the  MINE_RATE
   static adjustDifficulty({ originalBlock, timestamp }) {
     const { difficulty } = originalBlock;
 
