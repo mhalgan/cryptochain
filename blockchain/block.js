@@ -56,7 +56,7 @@ class Block {
   }
 
   // Dinamically adjusts the difficulty to mine the next block
-  // based on the time needed to mine the last one and the  MINE_RATE
+  // based on the time needed to mine the last one and the MINE_RATE
   static adjustDifficulty({ originalBlock, timestamp }) {
     const { difficulty } = originalBlock;
 
